@@ -20,12 +20,16 @@ and the other player's script sets the matching Pokémon to 0 HP.
 
 1. **Start the relay** on one PC: `python relay.py` (listens on port 8080).
 2. **Start EmuHawk with HTTP enabled** on both PCs:
+   - Right click Emuhawk.exe and select "create shortcut".
+   - Right click the shortcut and select "Properties".
+   - In the Target field, click at the end of of the text (after the quotation mark) add a space and paste this
    `EmuHawk.exe --url_get=http://<relay-ip>:8080/poll --url_post=http://<relay-ip>:8080/event`
-3. **Edit the top of `linked_faint.lua`:**
+   - Hit "Apply".
+4. **Edit the top of `linked_faint.lua`:**
    - `RELAY`: the relay's address (`http://127.0.0.1:8080` on the relay PC)
    - `PLAYER`: a different name for each player
-4. **Load the ROM and your save**, then run the script (Tools → Lua Console).
-5. Nickname your Pokémon with matching numbers, e.g. `A1`, `A2` and `B1`, `B2`.
+5. **Load the ROM and your save**, then run the script (Tools → Lua Console).
+6. Nickname your Pokémon with matching numbers, e.g. `A1`, `A2` and `B1`, `B2`.
 
 The first run scans for your party address and prints it. Copy it into `PARTY_ADDR`
 to skip the scan next time.
