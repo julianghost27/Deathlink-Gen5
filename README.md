@@ -4,7 +4,7 @@ Soul Link faint sync for Pokémon Gen 5 (Black/White/B2W2) Nuzlocke runs in BizH
 
 ## How it works
 
-Pokémon are paired by the number at the end of their nickname. The letters don't matter (`A22` = `B22`).
+Pokémon are paired by the number at the end of their nickname. The letters don't matter (`A23` = `B23`).
 
 Example: Player 1's `Hydreigon23` faints, so Player 2's `Electivire23` is set to 0 HP (and the other way around).
 
