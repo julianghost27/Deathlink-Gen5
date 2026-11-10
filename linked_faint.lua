@@ -1,9 +1,9 @@
 -- linked_faint.lua -- BizHawk 2.11.1 (melonDS core, Lua 5.4)
--- When a numbered Pokemon (e.g. pup2) faints, the friend's Pokemon with the
--- same number (jet2) is set to 0 HP, and vice versa.
+-- When a numbered Pokemon (Hydreigon23) faints, the friend's Pokemon with the
+-- same number (Electivire23) is set to 0 HP, and vice versa.
 
 local RELAY      = "http://127.0.0.1:8080"  -- where relay.py runs
-local PLAYER     = "goat"                   -- "goat" on your PC, "jet" on your friend's PC
+local PLAYER     = "CHANGE_ME"              -- MUST BE UNIQUE! (e.g., "Player1" on PC 1, "Player2" on PC 2)
 local DOM        = "Main RAM"               -- check: console.log(memory.getmemorydomainlist())
 local BASE       = 0x02000000               -- DS address where Main RAM starts
 local PARTY_ADDR = 0x022349B4               -- DS address of party slot 1; nil = auto-scan
@@ -160,7 +160,7 @@ if not PARTY_ADDR then
   console.log("scanning for party ...")
   PARTY_ADDR = scan()
   if not PARTY_ADDR then
-    console.log("no numbered Pokemon found. Nickname them (goat22 ...) and restart the script.")
+    console.log("no numbered Pokemon found. Nickname them with a shared number (e.g '3') and restart the script.")
     return
   end
   console.log(string.format("using PARTY_ADDR = 0x%08X (set it at the top to skip the scan)", PARTY_ADDR))
