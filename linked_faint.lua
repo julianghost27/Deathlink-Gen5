@@ -6,7 +6,7 @@ local RELAY      = "http://127.0.0.1:8080"  -- where relay.py runs
 local PLAYER     = "CHANGE_ME"              -- MUST BE UNIQUE! (e.g., "Player1" on PC 1, "Player2" on PC 2)
 local DOM        = "Main RAM"               -- check: console.log(memory.getmemorydomainlist())
 local BASE       = 0x02000000               -- DS address where Main RAM starts
-local PARTY_ADDR = 0x022349B4               -- DS address of party slot 1; nil = auto-scan
+local PARTY_ADDR = nil               -- DS address of party slot 1; nil = auto-scan
 local CHECK_EVERY, POLL_EVERY = 10, 20      -- in frames
 local KEEP_DEAD  = true                     -- keep re-applying 0 HP (blocks Pokemon Center heals)
 
